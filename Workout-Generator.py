@@ -3,7 +3,12 @@ import tkinter.font as tkfont
 from random import sample
 
 abdominalExercises = [
-    'ab wheel',
+    'toe touches',
+    'corkscrew',
+    'u boat',
+    'alt toe touches',
+    'side plank crunches',
+    'in and out',
     'russian twists',
     'crunches',
     'windshield wipers',
@@ -13,16 +18,12 @@ abdominalExercises = [
     'mountain climbers',
     'bicycles',
     'pulse ups',
-    'hanging leg raises'
     ]
 
 bicepsExercises = [
     'bicep curls w weights',
     'bicep curls w resistance band',
-    'chin ups',
-    'pull ups',
-    'isometric pullup hold',
-    'isometric chinup hold'
+    'hammer curls',
     ]
 
 tricepsExercises = [
@@ -31,7 +32,6 @@ tricepsExercises = [
     'diamond pushups',
     'tricep dips',
     'overhead pulldowns',
-    'widegrip pull ups',
     'bent over dumbell rows'
     ]
 
@@ -68,6 +68,8 @@ backExercises = [
     'bent over barbell rows'
 
 ]
+
+
 
 
 class window:
@@ -174,8 +176,7 @@ class window:
         try:
             self.picked = sample(exerciseList, int(self.exercises.get()))
         except:
-            return "theres not enough exercises in the list :( \npls put in a number less than " + str((1+len(exerciseList)))
-            + " in the exercises field :)"
+            return "theres not enough exercises in the list :( \npls put in a number less than " + str((1+len(exerciseList))) + " in the exercises field :)"
         for e in self.picked:
             if (e == 'plank' or e == 'mountain climbers' or "hold" in e):
                 self.final = self.final + e + ": till exhaustion\n"
